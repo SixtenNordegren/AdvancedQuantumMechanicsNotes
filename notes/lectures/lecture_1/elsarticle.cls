@@ -322,6 +322,7 @@
  \thispagestyle{pprintTitle}%
    \def\baselinestretch{1}%
     \Large\@title\par\vskip18pt
+    \normalsize\today\par\vskip10pt
     \normalsize\elsauthors\par\vskip10pt
     \footnotesize\itshape\elsaddress\par\vskip36pt
     \hrule\vskip12pt
@@ -448,8 +449,8 @@
      \let\@oddhead\@empty
      \let\@evenhead\@empty
      \def\@oddfoot{\footnotesize\itshape
-       
-       }%
+       \ifx\@journal\@empty 
+       \else\@journal\fi\hfill\today}%
      \let\@evenfoot\@oddfoot}
 \def\@seccntDot{.}
 \def\@seccntformat#1{\csname the#1\endcsname\@seccntDot\hskip 0.5em}
